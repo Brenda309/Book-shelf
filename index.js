@@ -1,10 +1,17 @@
-// Book Object
-const Book = {
-  title: '',
-  author: '',
-};
-// Books Collection
-let Books = [];
+class Books { /* eslint-disable-line max-classes-per-file */
+  constructor(array) { /* eslint-disable-line no-unused-vars */
+    this.array = [];
+  }
+}
+
+class Book { /* eslint-disable-line max-classes-per-file */
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
+const storage = new Books();
+
 if (localStorage.Books) {
   Books = JSON.parse(localStorage.Books);
 }
