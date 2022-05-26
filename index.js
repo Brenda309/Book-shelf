@@ -15,9 +15,11 @@ const author = document.getElementById('author');
 const addBtn = document.getElementById('addBtn');
 const storage = new Books();
 
+
 if (localStorage.Books) {
   storage.array = JSON.parse(localStorage.Books);
 }
+
 addBtn.addEventListener('click', () => {
   if (!booksTitle.value || !author.value) {
     alert('Enter both title books and author');
@@ -32,6 +34,8 @@ addBtn.addEventListener('click', () => {
   }
 });
 
+
+ const add = () => {
 if (localStorage.Books) {
   for (let i = 0; i < JSON.parse(localStorage.Books).length; i += 1) {
     const addTitle = document.createElement('p');
@@ -58,6 +62,11 @@ if (localStorage.Books) {
     ul.appendChild(li);
   }
 }
+}
+add();
+
+
+const remove= () =>{
 const rmv = document.getElementsByClassName('rmv');
 for (let i = 0; i < rmv.length; i += 1) {
   const rmvButton = document.getElementById(`btn${i}`);
@@ -71,3 +80,5 @@ for (let i = 0; i < rmv.length; i += 1) {
     window.location.reload();
   });
 }
+}
+remove();
