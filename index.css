@@ -2,6 +2,8 @@
 body {
   border: solid 4px green;
   width: 400px;
+  margin-left: 700px;
+  margin-top: 100px; 
 }
 
 button {
@@ -11,10 +13,6 @@ button {
 h1 {
   text-align: center;
   padding-bottom: 10px;
-}
-
-hr {
-  display: none;
 }
 
 #userInput {
@@ -39,10 +37,6 @@ li button {
 ul {
   border: solid 3px black;
   margin-left: 0.5em;
-  margin-right: 0.5em;
-  min-height: 10em;
-  padding-left: 5px;
-  padding-right: 5px;
 }
 
 li {
