@@ -1,68 +1,81 @@
-// Book Object
-const Book = {
-  title: '',
-  author: '',
-};
-// Books Collection
-let Books = [];
-if (localStorage.Books) {
-  Books = JSON.parse(localStorage.Books);
+class Books {/* eslint-disable-line max-classes-per-file */
+  constructor() {
+    this.array = [];
+  }
 }
 
-// populate local storage collection with user entries
+class Book {/* eslint-disable-line max-classes-per-file */
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
+const booksTitle = document.getElementById('title');
+const author = document.getElementById('author');
 const addBtn = document.getElementById('addBtn');
+const storage = new Books();
+
+if (localStorage.Books) {
+  storage.array = JSON.parse(localStorage.Books);
+}
+
 addBtn.addEventListener('click', () => {
-  const bookTitle = document.getElementById('title');
-  const author = document.getElementById('author');
-  if (!bookTitle.value || !author.value) {
-    alert('Enter both book title and author please');
+  if (!booksTitle.value || !author.value) {
+    alert('Enter both title books and author');
   } else {
-    const book = Object.create(Book);
-    book.title = bookTitle.value;
-    book.author = author.value;
-    Books.push(book);
-    bookTitle.value = '';
+    const book = new Book(booksTitle.value, author.value);
+    storage.array.push(book);
+    book.value = '';
     author.value = '';
-    const stringData = JSON.stringify(Books);
+    const stringData = JSON.stringify(storage.array);
     localStorage.setItem('Books', stringData);
     window.location.reload();
   }
 });
 
-// Display localStorage Books Collection entries
-if (localStorage.Books) {
-  for (let i = 0; i < JSON.parse(localStorage.Books).length; i += 1) {
-    const ul = document.querySelector('ul');
-    const li = document.createElement('li');
-    li.id = `${i}`;
-    li.style.listStyle = 'none';
-    const addTitle = document.createElement('p');
-    addTitle.innerHTML = JSON.parse(localStorage.Books)[i].title;
-    li.appendChild(addTitle);
-    const addAuthor = document.createElement('p');
-    addAuthor.innerHTML = JSON.parse(localStorage.Books)[i].author;
-    li.appendChild(addAuthor);
-    const rmvButton = document.createElement('button');
-    rmvButton.innerHTML = 'Remove';
-    rmvButton.id = `btn${i}`;
-    rmvButton.className = 'rmv';
-    li.appendChild(rmvButton);
-    const hr = document.createElement('hr');
-    li.appendChild(hr);
-    ul.appendChild(li);
-  }
-}
+const add = () => {
+  if (localStorage.Books) {
+    for (let i = 0; i < JSON.parse(localStorage.Books).length; i += 1) {
+      const addTitle = document.createElement('p');
+      const ul = document.querySelector('ul');
+      const li = document.createElement('li');
+      const addAuthor = document.createElement('p');
+      const rmvButton = document.createElement('button');
 
-// Remove books from collection and display
-for (let i = 0; i < document.getElementsByClassName('rmv').length; i += 1) {
-  const rmvButton = document.getElementById(`btn${i}`);
-  const titleName = Books[i].title;
-  const list = document.getElementById(`${i}`);
-  rmvButton.addEventListener('click', () => {
-    const filtered = Books.filter((Books) => Books.title !== titleName);
-    const stringData = JSON.stringify(filtered);
-    localStorage.setItem('Books', stringData);
-    list.remove();
-    window.location.reload();
-  });
-}
+      li.id = `${i}`;
+      li.style.listStyle = 'none';
+
+      addTitle.innerHTML = JSON.parse(localStorage.Books)[i].title;
+      addTitle.innerText += ' by ';
+      li.appendChild(addTitle);
+
+      addAuthor.innerHTML = JSON.parse(localStorage.Books)[i].author;
+      li.appendChild(addAuthor);
+
+      rmvButton.innerHTML = 'Remove';
+      rmvButton.id = `btn${i}`;
+      rmvButton.className = 'rmv';
+      li.appendChild(rmvButton);
+
+      ul.appendChild(li);
+    }
+  }
+};
+add();
+
+const remove = () => {
+  const rmv = document.getElementsByClassName('rmv');
+  for (let i = 0; i < rmv.length; i += 1) {
+    const rmvButton = document.getElementById(`btn${i}`);
+    const titleName = storage.array[i].title;
+    const list = document.getElementById(`${i}`);
+    rmvButton.addEventListener('click', () => {
+      const filtered = storage.array.filter((Books) => Books.title !== titleName);
+      const stringData = JSON.stringify(filtered);
+      localStorage.setItem('Books', stringData);
+      list.remove();
+      window.location.reload();
+    });
+  }
+};
+remove();
