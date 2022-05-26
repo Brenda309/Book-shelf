@@ -5,6 +5,7 @@
 > This is a basic website which users can use as a book-Shelf. Awesome Books website allow user to add and remove the collection.
 
 
+
 ## Built With
 
 - HTML
@@ -35,15 +36,15 @@
 - VS code
 
 
-
-
 👤 **Brenda Wihogora**
 
 GitHub: @Brenda309
 
+
 Twitter: @Brenda
 
 LinkedIn: https://www.linkedin.com/in/brenda-wihogora/
+
 
 ## 🤝 Contributing
 
