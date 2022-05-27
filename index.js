@@ -91,7 +91,7 @@ const userInput = document.getElementById('userInput');
 const contactSection = document.getElementById('contact-us');
 
 
-
+//display constact information
  contact.addEventListener('click', () => {
          contactSection.style.display = 'block';
          bookListSect.style.display = 'none';
