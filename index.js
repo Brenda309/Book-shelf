@@ -97,7 +97,7 @@ const contactSection = document.getElementById('contact-us');
          bookListSect.style.display = 'none';
          userInput.style.display = 'none';
      } );
-
+//display list of books that were add
       list.addEventListener('click', () => {
          bookListSect.style.display = 'block';
           contactSection.style.display = 'none';
