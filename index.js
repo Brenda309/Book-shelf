@@ -36,13 +36,16 @@ addBtn.addEventListener('click', () => {
 const add = () => {
   if (localStorage.Books) {
     for (let i = 0; i < JSON.parse(localStorage.Books).length; i += 1) {
+      const ul = document.getElementById('books');
       const addTitle = document.createElement('p');
-      const ul = document.querySelector('ul');
       const li = document.createElement('li');
       const addAuthor = document.createElement('p');
       const rmvButton = document.createElement('button');
 
+      ul.className = 'books';
+
       li.id = `${i}`;
+      li.className = 'myBooks';
       li.style.listStyle = 'none';
 
       addTitle.innerHTML = JSON.parse(localStorage.Books)[i].title;
@@ -79,3 +82,29 @@ const remove = () => {
   }
 };
 remove();
+// Add functionalities to the nav-menu
+const list = document.getElementById('list');
+const addNew = document.getElementById('new');
+const contact = document.getElementById('contact');
+const bookListSect = document.getElementById('book-list');
+const userInput = document.getElementById('userInput');
+const contactSection = document.getElementById('contact-us');
+
+// display constact information
+contact.addEventListener('click', () => {
+  contactSection.style.display = 'block';
+  bookListSect.style.display = 'none';
+  userInput.style.display = 'none';
+});
+// display list of books that were add
+list.addEventListener('click', () => {
+  bookListSect.style.display = 'block';
+  contactSection.style.display = 'none';
+  userInput.style.display = 'none';
+});
+// display input field field for use to add a book
+addNew.addEventListener('click', () => {
+  userInput.style.display = 'block';
+  bookListSect.style.display = 'none';
+  contactSection.style.display = 'none';
+});
