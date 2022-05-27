@@ -63,8 +63,8 @@ button {
   display: none;
   padding-top: 100px;
   padding-bottom: 400px;
-   margin-left: auto;
-   margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #userInput {
@@ -82,16 +82,15 @@ input {
   font-size: 20px;
   display: block;
   margin-left: auto;
-  margin-right: auto }
-
+  margin-right: auto;
+}
 
 #addBtn {
   width: 100px;
   height: 40px;
   display: block;
   margin-left: auto;
-  margin-right: auto ;
-
+  margin-right: auto;
 }
 
 .myBooks button {
@@ -99,21 +98,18 @@ input {
   border-radius: 0;
 }
 
-
 .addtitle {
   font-size: 30px;
   text-align: center;
-  }
+}
 
 #books {
-  display: flex;
   border: solid 3px black;
-width: 500px;
- display: block;
- margin-left: auto;
- margin-right: auto;
-   }
-
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .all-books {
   text-align: center;
