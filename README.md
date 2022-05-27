@@ -2,7 +2,7 @@
 
 ## 📚 Awesome Books
 
-> This is a basic website which users can use as a book-Shelf. Awesome Books website allow user to add and remove the collection.
+> This is a basic website which users can use as a book-Shelf. Awesome Books website allow user to add and remove books the collections.
 
 
 
