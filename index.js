@@ -82,7 +82,7 @@ const remove = () => {
   }
 };
 remove();
-
+// Add functionalities to the nav-menu
 const list = document.getElementById('list');
 const addNew = document.getElementById('new');
 const contact = document.getElementById('contact');
