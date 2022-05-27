@@ -102,10 +102,8 @@ const contactSection = document.getElementById('contact-us');
          bookListSect.style.display = 'block';
           contactSection.style.display = 'none';
            userInput.style.display = 'none';
-
-
      } );
-
+//display input field field for use to add a book
      addNew.addEventListener('click', () => {
         userInput.style.display = 'block';
          bookListSect.style.display = 'none';
